@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import classNames from "classnames";
 interface buttonProps {
-  btnType: string;
+  btnType?: string;
   className?: string;
 }
 
@@ -16,4 +16,8 @@ const Button: React.FC<buttonProps> = ({ btnType, className, children }) => {
     </div>
   );
 };
+
+Button.defaultProps={
+    btnType: 'default'
+}
 export default Button;
