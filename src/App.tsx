@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import "./App.css";
-
+import React from "react";
+import Button from "./components/button";
 const App: React.FC = () => {
-  const a = "123";
-
-  return <div className="App">{}</div>;
+  return (
+    <div className="App">
+      <Button btnType='flower' className='appButton'>content</Button>
+    </div>
+  );
 };
 
 export default App;
