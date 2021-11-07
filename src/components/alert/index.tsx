@@ -1,21 +1,21 @@
 import React, {Suspense} from 'react'
 import classNames from 'classnames'
 import css from './index.module.scss'
-import {buttonProps} from './interface'
+import {alertProps} from './interface'
 
-const Button: React.FC<buttonProps> = ({garish, className, children, ...handle}) => {
+const Alert: React.FC<alertProps> = ({garish, className, children, ...handle}) => {
   const cln = classNames(className, css.wrapper)
   const Component = React.lazy(() => import(`./${garish}`))
   return (
     <div className={cln} {...handle}>
-      <Suspense fallback={<div>Garish button loading...</div>}>
+      <Suspense fallback={<div>Garish alert loading...</div>}>
         <Component>{children}</Component>
       </Suspense>
     </div>
   )
 }
 
-Button.defaultProps = {
+Alert.defaultProps = {
   garish: 'default',
 }
-export default Button
+export default Alert

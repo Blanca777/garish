@@ -1,0 +1,15 @@
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: #f40;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

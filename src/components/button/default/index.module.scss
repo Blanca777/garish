@@ -1,0 +1,13 @@
+.box {
+  color: #fff;
+  background-color: #8470ff;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: #00bfff 0px 0px 5px;
+  &:hover {
+    color: #000;
+  }
+  &:active {
+    box-shadow: #00bfff 0px 0px 5px inset;
+  }
+}
