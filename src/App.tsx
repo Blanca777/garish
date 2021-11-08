@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import classNames from 'classnames'
 import Button from './components/button'
 import ChooseCard, {CCItem} from './components/chooseCard'
@@ -6,8 +6,9 @@ import ChooseCard, {CCItem} from './components/chooseCard'
 import css from './App.module.scss'
 
 const App: React.FC = () => {
+  const [value, setValue] = useState()
   const handleClick = () => {
-    console.log('click')
+    console.log('value:', value)
   }
   return (
     <div>
@@ -24,8 +25,8 @@ const App: React.FC = () => {
       </div>
 
       <div className={classNames(css.box, css.btnBox)}>
-        <ChooseCard garish="default" onClick={handleClick}>
-          <CCItem>1</CCItem>
+        <ChooseCard garish="default" state={{value, setValue}}>
+          <CCItem name="11">1</CCItem>
           <CCItem>2</CCItem>
         </ChooseCard>
       </div>
