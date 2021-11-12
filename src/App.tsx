@@ -1,41 +1,39 @@
 import React, {useState} from 'react'
 import classNames from 'classnames'
 import Button from './components/button'
-import ChooseCard, {CCItem} from './components/chooseCard'
-// import Alert from './components/alert'
+import Checkbox from './components/checkbox'
 import css from './App.module.scss'
 
 const App: React.FC = () => {
-  const [value, setValue] = useState()
+  const list = [1, 2, 3]
+  const [checked, setChecked] = useState<boolean>(true)
+  const [disabled, setDisabled] = useState<boolean>(false)
   const handleClick = () => {
-    console.log('value:', value)
+    console.log('list:', list)
+  }
+  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setChecked(e.target.checked)
+    e.target.focus()
+    console.log('Checkbox=', e.target.checked)
   }
   return (
     <div>
       <div className={classNames(css.box, css.btnBox)}>
-        <Button garish="default" onClick={handleClick}>
-          default
+        <Button garish="default" onClick={() => setChecked(!checked)}>
+          {checked ? 'checked' : 'Unchecked'}
         </Button>
-        <Button garish="flowline" onClick={handleClick}>
-          flowline
+        <Button garish="flowline" onClick={() => setDisabled(!disabled)}>
+          {disabled ? 'Undisabled' : 'disabled'}
         </Button>
         <Button garish="flowlight" onClick={handleClick}>
           flowlight
         </Button>
       </div>
 
-      <div className={classNames(css.box, css.btnBox)}>
-        <ChooseCard garish="default" state={{value, setValue}}>
-          <CCItem name="11">1</CCItem>
-          <CCItem>2</CCItem>
-        </ChooseCard>
-      </div>
-
-      <div className={classNames(css.box, css.alertBox)}>
-        {/* <Alert onClick={handleClick}>Alert1</Alert> */}
-        {/* <Alert garish="default" onClick={handleClick}>
-          Alert2
-        </Alert> */}
+      <div className={classNames(css.box, css.CCBox)}>
+        <Checkbox onChange={onChange} checked={checked} disabled={disabled} autoFocus>
+          受控
+        </Checkbox>
       </div>
     </div>
   )
