@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import classNames from 'classnames'
 import Button from './components/button'
 import Checkbox from './components/checkbox'
+import Tooltip from './components/tooltip'
 import css from './App.module.scss'
 
 const App: React.FC = () => {
@@ -34,6 +35,12 @@ const App: React.FC = () => {
         <Checkbox onChange={onChange} checked={checked} disabled={disabled} autoFocus>
           受控
         </Checkbox>
+      </div>
+
+      <div className={classNames(css.box)}>
+        <Tooltip title="123123asdasfasasdasdedqweszdSd123" placement="left">
+          <button>1asdasdsaasdasedsafasfaseqwedqweasdcs23</button>
+        </Tooltip>
       </div>
     </div>
   )
