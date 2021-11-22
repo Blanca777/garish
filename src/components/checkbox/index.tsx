@@ -2,16 +2,16 @@ import React, {useEffect, useState, useRef} from 'react'
 // import classNames from 'classnames'
 // import css from './index.module.scss'
 import {ICheckbox, ICheckboxGroup, Option} from './interface'
-export const CheckboxGroup: React.FC<ICheckboxGroup> = props => {
-  const {defaultValue, disabled, name, options, value} = props
-  const [list, setList] = useState<string[] | Option[]>(['123'])
-  useEffect(() => {
-    setList(options !== undefined ? options : [])
-  }, [options])
-  return list.map(item => {
-    return <div>{item}</div>
-  })
-}
+// export const CheckboxGroup: React.FC<ICheckboxGroup> = props => {
+//   const {defaultValue, disabled, name, options, value} = props
+//   const [list, setList] = useState<string[] | Option[]>(['123'])
+//   useEffect(() => {
+//     setList(options !== undefined ? options : [])
+//   }, [options])
+//   return list.map(item => {
+//     return <div>{item}</div>
+//   })
+// }
 
 const Checkbox: React.FC<ICheckbox> = props => {
   const {children, defaultChecked, onChange, disabled, checked, autoFocus} = props
