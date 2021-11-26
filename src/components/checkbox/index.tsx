@@ -50,10 +50,10 @@ const Checkbox: React.FC<ICheckbox> = props => {
 Checkbox.defaultProps = {
   garish: 'default',
 }
-CheckboxGroup.defaultProps = {
-  defaultValue: [],
-  disabled: false,
-  options: [],
-  value: [],
-}
+// CheckboxGroup.defaultProps = {
+//   defaultValue: [],
+//   disabled: false,
+//   options: [],
+//   value: [],
+// }
 export default Checkbox
