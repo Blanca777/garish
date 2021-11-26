@@ -5,27 +5,17 @@ import {TooltipContext} from '../index'
 
 const Default: React.FC = ({children}) => {
   const {color, placeClassName} = useContext(TooltipContext) as tooltipContextInterface
-  const [triangleStyle, setTriangleStyle] = useState(() => {
+  const [triangleStyle] = useState(() => {
     let initTriangleStyle = {}
     switch (placeClassName) {
-      case 'left':
-        initTriangleStyle = {
-          borderRight: `15px solid ${color}`,
-        }
-        break
-      case 'right':
-        initTriangleStyle = {
-          borderLeft: `15px solid ${color}`,
-        }
-        break
       case 'bottom':
         initTriangleStyle = {
-          borderBottom: `15px solid ${color}`,
+          borderBottom: `10px solid ${color}`,
         }
         break
       default:
         initTriangleStyle = {
-          borderTop: `15px solid ${color}`,
+          borderTop: `10px solid ${color}`,
         }
     }
     return initTriangleStyle

@@ -15,49 +15,45 @@ const Tooltip: React.FC<tooltipProps> = ({
   children,
   ...handle
 }) => {
-  const cln = classNames(className, css.wrapper)
   const Component = React.lazy(() => import(`./${garish}`))
 
   const placeClassName = classNames({
     top: placement === 'top',
-    left: placement === 'left',
-    right: placement === 'right',
     bottom: placement === 'bottom',
   })
 
   const [isShow, setIsShow] = useState(false)
 
   return (
-    <div className={cln} {...handle}>
-      <div
-        className={css.contain}
-        onClick={() => {
-          if (trigger === 'click') {
-            setIsShow(!isShow)
-          }
-        }}
-        onMouseEnter={() => {
-          if (trigger === 'hover') {
-            setIsShow(true)
-          }
-        }}
-        onMouseLeave={() => {
-          if (trigger === 'hover') {
-            setIsShow(false)
-          }
-        }}>
-        {children}
-        <div className={css[placeClassName]}>
-          {isShow ? (
-            <Suspense fallback={<div>Garish tooltip loading...</div>}>
-              <TooltipContext.Provider value={{color, placeClassName}}>
-                <Component>{title}</Component>
-              </TooltipContext.Provider>
-            </Suspense>
-          ) : (
-            ''
-          )}
-        </div>
+    <div
+      className={css.contain}
+      onClick={() => {
+        if (trigger === 'click') {
+          setIsShow(!isShow)
+        }
+      }}
+      onMouseEnter={() => {
+        if (trigger === 'hover') {
+          setIsShow(true)
+        }
+      }}
+      onMouseLeave={() => {
+        if (trigger === 'hover') {
+          setIsShow(false)
+        }
+      }}
+      {...handle}>
+      {children}
+      <div className={css[placeClassName]}>
+        {isShow ? (
+          <Suspense fallback={<div>Garish tooltip loading...</div>}>
+            <TooltipContext.Provider value={{color, placeClassName}}>
+              <Component>{title}</Component>
+            </TooltipContext.Provider>
+          </Suspense>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   )

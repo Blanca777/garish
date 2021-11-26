@@ -1,27 +1,16 @@
 .contain {
+  font-size: 12px;
   position: relative;
 
   .top {
     position: absolute;
-    top: -150%;
+    top: -30px;
     left: 0;
-  }
-
-  .left {
-    position: absolute;
-    top: 0;
-    right: -3%;
-  }
-
-  .right {
-    position: absolute;
-    top: 0;
-    left: -113%;
   }
 
   .bottom {
     position: absolute;
-    bottom: -20%;
+    bottom: -5px;
     left: 0;
   }
 }
