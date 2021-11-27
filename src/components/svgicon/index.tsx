@@ -1,22 +1,18 @@
 import React from 'react'
-// import css from './index.module.scss'
 import {svgiconProps} from './interface'
-
-const SvgIcon: React.FC<svgiconProps> = ({garish, name, ...handle}) => {
-  let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext)
-  try {
-    importAll(require.context('@src/common/svgs', false, /\.svg$/))
-  } catch (error) {
-    console.log(error)
-  }
+import '@src/common/icons/importIcons'
+import set from '@src/common/icons/svg/setting.svg'
+const SvgIcon: React.FC<svgiconProps> = ({garish, name, size, color, ...handle}) => {
   return (
-    <svg aria-hidden="true" {...handle}>
-      <use xlinkHref={`#${name}`}></use>
+    <svg fill={color} width={size} height={size}>
+      <use href={set} xlinkHref={`#${name}`} />
     </svg>
   )
 }
 
 SvgIcon.defaultProps = {
   garish: 'default',
+  size: 30,
+  color: '#000',
 }
 export default SvgIcon

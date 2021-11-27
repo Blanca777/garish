@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Button from './components/button'
 import Checkbox from './components/checkbox'
 import Tooltip from './components/tooltip'
-import SvgIcon from './components/svgicon'
+import Divider from './components/divider'
 import css from './App.module.scss'
 
 const App: React.FC = () => {
@@ -58,7 +58,10 @@ const App: React.FC = () => {
       </div>
 
       <div className={classNames(css.box)}>
-        <SvgIcon name="setting"></SvgIcon>
+        <Divider></Divider>
+        <Divider text="Left" textPlace="left"></Divider>
+        <Divider text="Center" textPlace="center"></Divider>
+        <Divider text="Right" textPlace="right" maskColor="skyblue" color="#fff"></Divider>
       </div>
     </div>
   )
