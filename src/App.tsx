@@ -67,25 +67,39 @@ const App: React.FC = () => {
       </div>
 
       <div className={classNames(css.box)}>
-        <Row>
-          <Col span={8}>col-8</Col>
-          <Col span={8}>col-8</Col>
-          <Col span={8}>col-8</Col>
-        </Row>
-      </div>
-
-      <div className={classNames(css.box)}>
-        <Row>
-          <Col className={css.col} span={0}>
-            col-0
+        <Row align="center" justify="between" className={css.row}>
+          <Col className={css.col} span={3}>
+            col-4
+          </Col>
+          <Col className={css.col} span={3}>
+            col-4
+          </Col>
+          <Col className={css.col} span={3}>
+            col-4
           </Col>
         </Row>
       </div>
 
       <div className={classNames(css.box)}>
         <Row>
-          <Col className={css.col} span={24}>
-            col-24
+          <Col className={css.col} span={6}>
+            col-6
+          </Col>
+          <Col className={css.col} span={6}>
+            <Col className={css.col} span={6}>
+              col--col-6
+            </Col>
+            <Col className={css.col} span={6}>
+              col--col-6
+            </Col>
+          </Col>
+        </Row>
+      </div>
+
+      <div className={classNames(css.box)}>
+        <Row>
+          <Col className={css.col} span={12}>
+            col-12
           </Col>
         </Row>
       </div>

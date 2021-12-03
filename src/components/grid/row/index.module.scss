@@ -4,10 +4,38 @@
   display: flex;
 }
 
-.row {
-  flex-direction: row;
+.aligntop {
+  align-items: flex-start;
 }
 
-.column {
-  flex-direction: column;
+.aligncenter {
+  align-items: center;
+}
+
+.alignbottom {
+  align-items: flex-end;
+}
+
+.alignstretch {
+  align-items: stretch;
+}
+
+.justifyleft {
+  justify-content: flex-start;
+}
+
+.justifycenter {
+  justify-content: center;
+}
+
+.justifyright {
+  justify-content: flex-end;
+}
+
+.justifybetween {
+  justify-content: space-between;
+}
+
+.justifyaround {
+  justify-content: space-around;
 }
