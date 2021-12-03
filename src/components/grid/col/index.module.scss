@@ -1,3 +1,10 @@
-.col {
-  flex: 1;
+@for $item from 0 to 25 {
+
+  .col-#{$item} {
+    @if $item==0 {
+      display: none;
+    }
+
+    flex: $item;
+  }
 }

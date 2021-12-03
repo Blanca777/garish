@@ -1,9 +1,11 @@
 import React from 'react'
 import {ColProps} from './interface'
 import css from './index.module.scss'
+import classNames from 'classnames'
 
-const Row: React.FC<ColProps> = ({children}) => {
-  return <div className={css.col}>{children}</div>
+const Row: React.FC<ColProps> = ({className, span, children}) => {
+  const cln = classNames(css[`col-${span}`], className)
+  return <div className={cln}>{children}</div>
 }
 
 export default Row

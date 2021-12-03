@@ -68,9 +68,25 @@ const App: React.FC = () => {
 
       <div className={classNames(css.box)}>
         <Row>
-          <Col>123</Col>
-          <Col>123</Col>
-          <Col>123</Col>
+          <Col span={8}>col-8</Col>
+          <Col span={8}>col-8</Col>
+          <Col span={8}>col-8</Col>
+        </Row>
+      </div>
+
+      <div className={classNames(css.box)}>
+        <Row>
+          <Col className={css.col} span={0}>
+            col-0
+          </Col>
+        </Row>
+      </div>
+
+      <div className={classNames(css.box)}>
+        <Row>
+          <Col className={css.col} span={24}>
+            col-24
+          </Col>
         </Row>
       </div>
     </div>
